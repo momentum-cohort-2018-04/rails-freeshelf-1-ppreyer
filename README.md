@@ -10,6 +10,7 @@ On the first day, your application should:
   - Books have, at a minimum, a title, author, description, and URL
 - Allow anyone to update or delete a book entry
 - Allow anyone to view the list of books
+- Have seed data for books (only a few books are necessary, but it's up to you how many you seed)
 
 ### Extra features
 
@@ -21,3 +22,4 @@ If you finish all of the above, consider some of the following:
 ## Resources
 
 - [Free Programming Books Online](https://github.com/EbookFoundation/free-programming-books/blob/master/free-programming-books.md)
+- [Faker gem](https://github.com/stympy/faker) (note: you don't need to use this, but it is useful and fun for generating seed data!)
