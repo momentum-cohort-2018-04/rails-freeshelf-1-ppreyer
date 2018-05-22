@@ -6,5 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Book.create([{title: Faker::ProgrammingLanguage.name, author: Faker::ProgrammingLanguage.creator}])
+require 'faker'
 
+5.times do
+  Book.create!([{title: Faker::ProgrammingLanguage.name, author: Faker::ProgrammingLanguage.creator}])
+end

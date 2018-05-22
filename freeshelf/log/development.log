@@ -1553,3 +1553,108 @@ Processing by BooksController#index as HTML
 Completed 200 OK in 127ms (Views: 115.9ms | ActiveRecord: 0.6ms)
 
 
+  [1m[35m (15.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mBook Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."title" = $1 LIMIT $2[0m  [["title", "C"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mBook Create (6.6ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "C"], ["author", "Roberto Ierusalimschy"], ["created_at", "2018-05-22 00:27:36.158969"], ["updated_at", "2018-05-22 00:27:36.158969"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (13.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mBook Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."title" = $1 LIMIT $2[0m  [["title", "Ruby"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mBook Create (2.2ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Ruby"], ["author", "Friedrich L. Bauer"], ["created_at", "2018-05-22 00:27:36.185332"], ["updated_at", "2018-05-22 00:27:36.185332"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mBook Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."title" = $1 LIMIT $2[0m  [["title", "JavaScript"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mBook Create (0.6ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "JavaScript"], ["author", "Rich Hickey"], ["created_at", "2018-05-22 00:27:36.194570"], ["updated_at", "2018-05-22 00:27:36.194570"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mBook Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."title" = $1 LIMIT $2[0m  [["title", "D"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mBook Create (5.0ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "D"], ["author", "Friedrich L. Bauer"], ["created_at", "2018-05-22 00:27:36.201686"], ["updated_at", "2018-05-22 00:27:36.201686"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mBook Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."title" = $1 LIMIT $2[0m  [["title", "ALGOL"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mBook Create (1.2ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "ALGOL"], ["author", "Bjarne Stroustrup"], ["created_at", "2018-05-22 00:27:36.213888"], ["updated_at", "2018-05-22 00:27:36.213888"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+Started GET "/books" for 127.0.0.1 at 2018-05-21 20:27:43 -0400
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (3.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:3
+  Rendered books/index.html.erb within layouts/application (154.9ms)
+Completed 200 OK in 525ms (Views: 429.4ms | ActiveRecord: 3.5ms)
+
+
+Started DELETE "/books/3" for 127.0.0.1 at 2018-05-21 20:27:53 -0400
+Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"eP6elbLmU3whHkxze3+moB4u1sPn96NZIo6D2EGfdRzTnGP8yRCVeA61+si80RGwY9sXF1S/JtNOKrlkIzlxZw==", "id"=>"3"}
+  [1m[36mBook Load (2.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:38
+  [1m[35m (2.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/books_controller.rb:39
+  [1m[36mBook Destroy (0.9ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 3]]
+  ↳ app/controllers/books_controller.rb:39
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/books_controller.rb:39
+Redirected to http://localhost:3000/books
+Completed 302 Found in 88ms (ActiveRecord: 15.6ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2018-05-21 20:27:53 -0400
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (3.0ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:3
+  Rendered books/index.html.erb within layouts/application (16.7ms)
+Completed 200 OK in 229ms (Views: 208.5ms | ActiveRecord: 3.0ms)
+
+
+Started DELETE "/books/4" for 127.0.0.1 at 2018-05-21 20:27:57 -0400
+Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"PHvzgvaTGLqPbj0k1IHA8cOXEN1PmC7Im4xGeGC1AZCXGQ7rjWXevqDFi58TL3fhvmLRCfzQq0L3KHzEAhMF6w==", "id"=>"4"}
+  [1m[36mBook Load (4.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:38
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/books_controller.rb:39
+  [1m[36mBook Destroy (6.7ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 4]]
+  ↳ app/controllers/books_controller.rb:39
+  [1m[35m (11.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/books_controller.rb:39
+Redirected to http://localhost:3000/books
+Completed 302 Found in 59ms (ActiveRecord: 22.3ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2018-05-21 20:27:57 -0400
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (1.8ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:3
+  Rendered books/index.html.erb within layouts/application (54.1ms)
+Completed 200 OK in 311ms (Views: 296.4ms | ActiveRecord: 1.8ms)
+
+
