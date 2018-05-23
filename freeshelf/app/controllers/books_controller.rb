@@ -18,7 +18,7 @@ class BooksController < ApplicationController
   def create
     @book = Book.new(book_params)
     if @book.save
-      redirect_to @book
+      redirect_to @book, notice: "Your book was created successfully."
     else
       render 'new'
     end
@@ -28,7 +28,7 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
  
     if @book.update(book_params)
-      redirect_to "/books"
+      redirect_to "/books", notice: "Your book was updated successfully."
     else
       render 'edit'
     end
@@ -38,7 +38,7 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
     @book.destroy
 
-    redirect_to "/books"
+    redirect_to "/books", notice: "Your book was deleted successfully."
   end
 
   private

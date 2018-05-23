@@ -1,0 +1,13 @@
+<div>
+  <%= @checkout.title %>
+  <%= @checkout.author %>
+  <%= @checkout.description %>
+  <%= @checkout.url %>
+</div>
+
+
+<%= form_for(@checkout, :url => "/checkouts", :method => :POST) do |f| %>
+  <%= f.submit "Confirm Checkout" %>
+<% end %>
+
+

@@ -5,6 +5,7 @@
   <p><%= book.author %></p>
   <p><%= book.description %></p>
   <p><%= book.url %></p>
+  <%= link_to 'Checkout', checkout_path(book.id) %>
   <%= link_to 'Edit', edit_book_path(book) %>
   <%= link_to 'Delete', book_path(book),
               method: :delete,
