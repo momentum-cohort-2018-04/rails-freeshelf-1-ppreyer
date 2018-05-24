@@ -9,5 +9,5 @@
 require 'faker'
 
 5.times do
-  Book.create!([{title: Faker::ProgrammingLanguage.name, author: Faker::ProgrammingLanguage.creator}])
+  Book.create!([{user_id: 5, title: Faker::ProgrammingLanguage.name, author: Faker::ProgrammingLanguage.creator, description: "test text", url: "www.testexample.com"}])
 end

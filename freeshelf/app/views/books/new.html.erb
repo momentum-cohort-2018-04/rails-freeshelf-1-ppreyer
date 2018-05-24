@@ -1,3 +1,5 @@
+<h1>Add a Book</h1>
+<%= link_to 'List of Books', "/books" %>
 <% if @book.errors.any? %>
   <div class="alert alert-danger">
     <h3><%= pluralize(@book.errors.count, "error") %> prohibited this 
@@ -11,7 +13,8 @@
   </div>
 <% end %>
 
-<%= form_with scope: :book, url: books_path, local: true do |form| %>
+<%= form_for(@book) do |form| %>
+  <%= form.hidden_field :user_id, value: current_user.id %>
   <p>
     <%= form.label :title %><br>
     <%= form.text_field :title %>

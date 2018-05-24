@@ -1,13 +1,14 @@
-<h1>Hello World</h1>
-
+<h1>List of Books</h1>
+<%= link_to 'Log In Page', new_login_path %>
+<%= link_to 'Registration Page', new_user_path %>
+<%= link_to 'Add a Book', new_book_path %>
 <% @books.each do |book| %>
   <p><%= book.title %></p>
   <p><%= book.author %></p>
   <p><%= book.description %></p>
   <p><%= book.url %></p>
-  <%= link_to 'Checkout', checkout_path(book.id) %>
+  <%= link_to 'Checkout', new_checkout_path(book_id: book.id) %>
   <%= link_to 'Edit', edit_book_path(book) %>
   <%= link_to 'Delete', book_path(book),
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %>
+              method: :delete %>
 <% end %>

@@ -13,11 +13,11 @@
 #
 
 class Book < ApplicationRecord  
-  belongs_to :user, optional: true
+  belongs_to :user
   has_many :users, through: :checkouts
   validates :title, presence: true, uniqueness: true
   validates :author, presence: true
-  validates :description, presence: true,                             length: { maximum: 500 }
+  validates :description, presence: true, length: { maximum: 500 }
   validates :url, presence: true
 end
 

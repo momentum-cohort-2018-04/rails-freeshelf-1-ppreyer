@@ -1,3 +1,23 @@
-<h1>Hello World</h1>
-
-<div><%=@checkout%></div>
+<h1>Books Checked Out</h1>
+<%= link_to 'List of All Books', "/books" %>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Author</th>
+<th>Description</th>
+<th>Url</th>
+</tr>
+</thead>
+<tbody>
+<% @checkouts.inspect %>
+<% @checkouts.each do |checkout| %>
+<tr>
+<td><%= checkout.book.title %></td>
+<td><%= checkout.book.author %></td>
+<td><%= checkout.book.description %></td>
+<td><%= checkout.book.url %></td>
+</tr>
+<% end %>
+</tbody>
+</table>

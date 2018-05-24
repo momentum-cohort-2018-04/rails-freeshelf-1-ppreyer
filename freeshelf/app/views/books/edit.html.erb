@@ -1,4 +1,6 @@
+<%= link_to 'List of Books', "/books" %>
 <%= form_with(model: @book, local: true) do |form| %>
+
     <p>
       <%= form.label :title %><br>
       <%= form.text_field :title %>
@@ -23,5 +25,3 @@
       <%= form.submit %>
     </p>
   <% end %>
- 
-<%= link_to 'Back', book_path %>
