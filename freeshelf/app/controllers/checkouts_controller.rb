@@ -8,17 +8,19 @@ class CheckoutsController < ApplicationController
     @book = Book.find(params[:book_id])
   end
 
-  def show
-    @checkout = Book.find(params[:id])
-  end
-
   def create
     @checkout = Checkout.new(checkout_params)
     if @checkout.save
-      redirect_to "/checkouts", notice: "Your book was checked out successfully."
+      redirect_to checkouts_path, notice: "Your book was checked out successfully."
     else
       render "new"
     end
+  end
+
+  def destroy
+    @checkout = Checkout.find(params[:id])
+    @checkout.destroy
+    redirect_to checkouts_path
   end
 
   private

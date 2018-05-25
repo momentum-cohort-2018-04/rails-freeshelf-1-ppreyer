@@ -3,7 +3,7 @@ class LoginsController < ApplicationController
   end
 
   def show
-    redirect_to "/login/new"
+    redirect_to "/login"
   end
 
   def new
@@ -24,7 +24,7 @@ class LoginsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    redirect_to "/login", notice: "You have successfully logged out!"
+    redirect_to new_login_path, notice: "You have successfully logged out!"
   end
   
 end

@@ -1,27 +1,12 @@
 <%= link_to 'List of Books', "/books" %>
-<%= form_with(model: @book, local: true) do |form| %>
-
-    <p>
-      <%= form.label :title %><br>
-      <%= form.text_field :title %>
-    </p>
-   
-    <p>
-      <%= form.label :author %><br>
-      <%= form.text_field :author %>
-    </p>
-   
-    <p>
-      <%= form.label :description %><br>
-      <%= form.text_area :description %>
-    </p>
-  
-    <p>
-      <%= form.label :url %><br>
-      <%= form.text_field :url %>
-    </p>
-  
-    <p>
-      <%= form.submit %>
-    </p>
+<%= form_for(@book) do |form| %>
+    <%= form.label :title %><br>
+    <%= form.text_field :title, :class => 'form-control' %>
+    <%= form.label :author %><br>
+    <%= form.text_field :author, :class => 'form-control' %>  
+    <%= form.label :description %><br>
+    <%= form.text_area :description, :class => 'form-control' %> 
+    <%= form.label :url %><br>
+    <%= form.text_field :url, :class => 'form-control' %>
+    <%= form.submit :class => 'btn btn-primary'%>
   <% end %>

@@ -1,8 +1,6 @@
 class ApplicationController < ActionController::Base
   # Allows you to use current user in the views
   helper_method :current_user
-  before_action :require_login, only: [:edit, :update, :destroy]
-
   private
 
   def current_user    
