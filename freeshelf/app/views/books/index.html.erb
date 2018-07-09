@@ -1,0 +1,26 @@
+<h1>List of Available Books</h1>
+<%= link_to 'Add a Book', new_book_path %>
+<table class="table">
+  <thead>
+    <tr>
+    <th>Title</th>
+    <th>Author</th>
+    <th>Description</th>
+    <th>Url</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @books.each do |book| %>
+        <tr>
+          <td><%= book.title %></td>
+          <td><%= book.author %></td>
+          <td><%= book.description %></td>
+          <td><%= book.url %></td>
+          <td><%= link_to 'Checkout', new_checkout_path(book_id: book.id) %></td>
+          <td><%= link_to 'Edit', edit_book_path(book) %></td>
+          <td><%= link_to 'Delete', book_path(book),
+                      method: :delete %></td>
+        </tr>
+    <% end %>
+  </tbody>
+</table>

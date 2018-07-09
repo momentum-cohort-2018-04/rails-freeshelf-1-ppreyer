@@ -1,0 +1,26 @@
+<h1><%= current_user %>'s Current Books</h1>
+<%= link_to 'List of Available Books', "/books" %>
+<table class="table">
+  <thead>
+    <tr>
+    <th>Title</th>
+    <th>Author</th>
+    <th>Description</th>
+    <th>Url</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @checkouts.each do |checkout| %>
+      <% if checkout.book %>
+        <tr>
+          <td><%= checkout.book.title %></td>
+          <td><%= checkout.book.author %></td>
+          <td><%= checkout.book.description %></td>
+          <td><%= checkout.book.url %></td>
+          <td><%= link_to 'Remove from List', checkout_path(checkout),
+              method: :delete %><td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>

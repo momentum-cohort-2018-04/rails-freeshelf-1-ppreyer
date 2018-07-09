@@ -1,0 +1,26 @@
+<h1>Book Checkout</h1>
+<%= link_to 'List of Books', "/books" %>
+<table class="table">
+<thead>
+<tr>
+<th>Title</th>
+<th>Author</th>
+<th>Description</th>
+<th>Url</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><%= @book.title %></td>
+<td><%= @book.author %></td>
+<td><%= @book.description %></td>
+<td><%= @book.url %></td>
+</tr>
+</tbody>
+</table>
+
+<%= form_for(@checkout) do |f| %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.hidden_field :book_id, value: @book.id %>
+  <%= f.submit "Confirm Checkout"%>
+<% end %>

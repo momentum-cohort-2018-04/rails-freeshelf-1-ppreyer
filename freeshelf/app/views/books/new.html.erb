@@ -1,0 +1,41 @@
+<h1>Add a Book</h1>
+<%= link_to 'List of Books', "/books" %>
+<% if @book.errors.any? %>
+  <div class="alert alert-danger">
+    <h3><%= pluralize(@book.errors.count, "error") %> prohibited this 
+    book from being saved:</h3>
+ 
+    <ul>
+    <% @book.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for(@book) do |form| %>
+  <%= form.hidden_field :user_id, value: current_user.id %>
+  <p>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </p>
+ 
+  <p>
+    <%= form.label :author %><br>
+    <%= form.text_field :author %>
+  </p>
+ 
+  <p>
+    <%= form.label :description %><br>
+    <%= form.text_area :description %>
+  </p>
+
+  <p>
+    <%= form.label :url %><br>
+    <%= form.text_field :url %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
